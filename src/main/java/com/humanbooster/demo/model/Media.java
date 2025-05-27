@@ -1,4 +1,5 @@
 package com.humanbooster.demo.model;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,31 +12,29 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "borne")
-public class Borne {
+@Table(name = "media")
+public class Media {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
-    private String nom;
-    @NotBlank
-    private int tarif;
-    
-    @NotBlank
-    private int puissance;
+    private String url;
 
     @NotBlank
-    private String instruction;
+    private String type;
 
     @NotBlank
-    private boolean occupee;
+    private String description;
 
-    private boolean etat;
-    public Borne() {
+    @NotBlank
+    private String taille;
+
+    public Media() {
         
     }
+
 
     
 }
