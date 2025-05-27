@@ -8,11 +8,13 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "utilisateur")
 public class Utilisateur {
     
@@ -24,6 +26,10 @@ public class Utilisateur {
     @Size(min = 2, max = 30)
     private String nom;
 
+    @NotBlank
+    @Size(min = 2, max = 30)
+    private String prenom;
+
     @Email
     @NotBlank
     private String email;
@@ -32,7 +38,5 @@ public class Utilisateur {
     @NotBlank
     private String motDePasse;
 
-    public Utilisateur() {
-        // Constructeur par défaut
-    }    
+    
 }

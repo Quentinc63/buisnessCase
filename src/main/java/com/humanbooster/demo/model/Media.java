@@ -6,12 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "media")
 public class Media {
 
@@ -31,9 +33,7 @@ public class Media {
     @NotBlank
     private String taille;
 
-    public Media() {
-        
-    }
+ 
 
 
     
