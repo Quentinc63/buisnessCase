@@ -34,7 +34,7 @@ public class Borne {
     @NotNull
     private int tarif;
 
-    @NotBlank
+    @NotNull
     private int puissance;
 
     @NotBlank
