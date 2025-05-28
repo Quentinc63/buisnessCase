@@ -8,13 +8,13 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "utilisateur")
 public class Utilisateur {
     
@@ -37,6 +37,8 @@ public class Utilisateur {
     @Column(name = "mot_de_passe")
     @NotBlank
     private String motDePasse;
+
+    
 
     
 }

@@ -5,15 +5,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 
 @Entity
 @Data
-@AllArgsConstructor
 @Table(name = "borne")
+@NoArgsConstructor
 public class Borne {
 
     @Id
@@ -22,6 +22,7 @@ public class Borne {
 
     @NotBlank
     private String nom;
+    
     @NotBlank
     private int tarif;
 
