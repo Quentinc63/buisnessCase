@@ -1,10 +1,12 @@
 package com.humanbooster.demo.model;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,7 +25,7 @@ public class Borne {
     @NotBlank
     private String nom;
     
-    @NotBlank
+    @NotNull
     private int tarif;
 
     @NotBlank
@@ -32,9 +34,11 @@ public class Borne {
     @NotBlank
     private String instruction;
 
-    @NotBlank
+    @NotNull
+    @Column(columnDefinition = "boolean default false")
     private boolean occupee;
 
+    @NotNull
     private boolean etat;
     
 

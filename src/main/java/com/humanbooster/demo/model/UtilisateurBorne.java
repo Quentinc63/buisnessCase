@@ -9,6 +9,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +21,7 @@ import lombok.NoArgsConstructor;
 public class UtilisateurBorne {
     @EmbeddedId
     private UtilisateurBorneId id = new UtilisateurBorneId();
+
     
     @ManyToOne
     @MapsId("utilisateurId")  
@@ -30,8 +33,15 @@ public class UtilisateurBorne {
     @JoinColumn(name = "borne_id")
     private Borne borne;
     
+    @NotBlank
     private int numReservation;
+
+    @NotNull
     private LocalDate dateFin;
+
+    @NotNull
     private LocalDate dateDebut;
+
+    @NotNull
     private boolean etat;
 }
